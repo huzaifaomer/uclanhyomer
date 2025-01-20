@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="uclan logo 1.png" alt="UCLan Logo">
+            </div>
+            <!-- Hamburger Menu Icon -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Product Details</h1>
+        <div id="product-details">
+            <!-- JavaScript will populate product details here -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 UCLan Student Union Shop</p>
+    </footer>
+
+    <script>
+        const queryParams = new URLSearchParams(window.location.search);
+        const productId = queryParams.get('id');
+    
+        const products = {
+            hoodie1: {
+                name: "Blue Zip-Up Hoodie",
+                price: 30,
+                description: "A stylish and comfortable hoodie for everyday use..",
+                image: "hoodies/hoodie (1).jpg",
+            },
+            hoodie1: {
+                name: "Light Blue Hoodie",
+                price: 30,
+                description: "A stylish and comfortable hoodie for everyday use..",
+                image: "hoodies/hoodie (2).jpg",
+            },
+            // Add other products...
+        };
+    
+        const product = products[productId];
+    
+        if (product) {
+            document.getElementById("product-details").innerHTML = `
+                <div>
+                    <img src="${product.image}" alt="${product.name}" style="width: 100%; max-width: 400px;">
+                    <h2>${product.name}</h2>
+                    <p>${product.description}</p>
+                    <p>Price: £${product.price}</p>
+                    <button id="add-to-cart-btn">Add to Cart</button>
+                </div>
+            `;
+    
+            document.getElementById("add-to-cart-btn").addEventListener("click", () => {
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+                cart.push({ id: productId, name: product.name, price: product.price, image: product.image });
+                localStorage.setItem("cart", JSON.stringify(cart));
+                alert(`${product.name} added to cart!`);
+            });
+        } else {
+            document.getElementById("product-details").innerHTML = `<p>Product not found!</p>`;
+        }
+    </script>
+    
+
+
+<button id="add-to-cart-btn">Add to Cart</button>
+
+
+<button id="back-to-top" title="Go to top">⬆ Back to Top</button>
+
+<script src="item.js"></script>
+
+

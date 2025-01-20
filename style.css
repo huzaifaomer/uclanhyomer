@@ -1,0 +1,342 @@
+/* General styles */
+body {
+    font-family: 'Calibri Light', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #34516C; /* UCLan blue */
+    color: white;
+    position: relative;
+}
+
+.logo img {
+    height: 75px; /* Adjust logo height */
+    width: auto;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 1rem;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: #ff0000; /* Highlight color */
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it stays above other elements */
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show hamburger icon */
+    }
+
+    .nav-list {
+        display: none; /* Hide menu items by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Position below the navbar */
+        right: 0;
+        background-color: #34516C; /* Same color as navbar */
+        width: 100%;
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+
+    .nav-list.active {
+        display: flex; /* Show menu items when active */
+    }
+
+    .nav-list li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+}
+
+/* Video Section */
+.home-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 6rem); /* 3 inches of white space on each side */
+    margin: 0 auto; /* Center horizontally */
+    box-sizing: border-box;
+    padding: 1rem 0; /* Optional: Add vertical spacing between videos */
+}
+
+.home-video video,
+.home-video iframe {
+    width: 100%; /* Fill the available width */
+    height: 6in; /* Set height to 6 inches */
+    object-fit: cover; /* Maintain aspect ratio for video */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+}
+
+/* Ensure the body doesn't have extra margins */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Ensures 6 items per row */
+    gap: 20px;
+    justify-items: center;
+}
+
+
+.product-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .product-card h3 {
+    font-size: 1.0em;
+    margin-bottom: 10px;
+  }
+  
+  .product-card p {
+    margin: 5px 0;
+  }
+  
+  .product-card button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0;
+  }
+  
+  .product-card button:hover {
+    background-color: #ff0000;
+  }
+
+
+  .cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-item-image {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.cart-total {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.remove-item {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-item:hover {
+    background-color: #c9302c;
+}
+
+
+.remove-item {
+    background-color: #ff0800;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-item:hover {
+    background-color: #e6635f;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #34516C;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: #34516C; /* Dark blue */
+    color: white;
+    padding: 2rem 1rem; /* Add padding for spacing */
+    text-align: center; /* Center-align text by default */
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensure it works on smaller screens */
+    justify-content: space-between; /* Distribute sections evenly */
+    max-width: 1200px; /* Restrict width */
+    margin: 0 auto; /* Center the footer content */
+    text-align: left; /* Align text to the left */
+}
+
+.footer-section {
+    flex: 1; /* Equal width for all sections */
+    margin: 0 1rem; /* Spacing between sections */
+    min-width: 200px; /* Ensure sections don't shrink too small */
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #ffffff; /* White link color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ff0202; /* UCLan red for hover */
+}
+
+.footer-section p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack sections vertically */
+        text-align: center; /* Center-align text on smaller screens */
+    }
+
+    .footer-section {
+        margin: 1rem 0; /* Add vertical spacing */
+    }
+}
+
+#back-to-top {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    z-index: 1000; /* Ensure it appears above other elements */
+    background-color: #ff0000; /* Button color */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+}
+
+#back-to-top:hover {
+    background-color: #005bb5; /* Darker color on hover */
+}
+
+#item-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+#item-details-container img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#item-details-container h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#item-details-container p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#item-details-container button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#item-details-container button:hover {
+    background-color: #005bb5;
+}
